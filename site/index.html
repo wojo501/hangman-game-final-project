@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hangman Game</title>
+</head>
+<body>
+    <div class="game">
+        <div class="game-top">
+            <div class="game-attempts"></div>
+            
+            <div class="game-category"></div>
+        </div>
 
+        <div class="game-picture">
+            <img src="/sources/images/hangman-game-front.png" alt="hangman picture"/>
+        </div>
+
+        <div class="game-sentence"></div>
+
+        <div class="game-letters"></div>
+
+        <div class="game-status"></div>
+
+        <button type="button" class="button game-start">Start game</button>
+    </div>
+    <script type="module" src="gameLogic.js"></script>
+    <script type="module" src="categoriesSentences.js"></script>
+    <script src="https://unpkg.com/howler@2.2.3/dist/howler.js"></script>
+    <script type="module" src="audio.js"></script>
+</body>
+</html>

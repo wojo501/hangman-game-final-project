@@ -1,1 +1,143 @@
+* {
+    box-sizing:border-box;
+}
 
+body {
+    background-color: rgb(197, 59, 59);
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    gap: 10px;
+}
+
+.game-top{
+    display: flex;
+    flex-direction: row;
+}
+
+.game-sentence {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align:center;
+}
+
+
+.game-sentence-box {
+    text-transform: uppercase;
+    width: 3rem;
+    height: 3rem;
+    border-bottom: 3px solid rgb(235, 235, 102);
+    margin: 1rem 0.5rem 2rem;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #333;
+    /* vertical-align: top; */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-sentence-box-space {
+    border: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* paste */
+.game-letters {
+    list-style-type:none;
+    margin:10px auto;
+    padding:0;
+    max-width:1200px;
+    text-align:center;
+}
+.game-letter {
+    --color: rgb(235, 235, 102);
+    display:inline-block;
+    width: 4rem;
+    height: 4rem;
+    margin:0.3rem;
+    cursor:pointer;
+    text-transform:uppercase;
+    font-size: 2rem;
+    border-radius: 4px;
+    font-family: sans-serif;
+    text-align:center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: 2px solid var(--color);
+    color: var(--color);
+}
+.game-letter:disabled {
+    --color: #333;
+    cursor:default;
+}
+.game-letter:not(:disabled):hover {
+    --color: rgba(50, 50, 50, 0.8);
+    background: rgb(235, 235, 102);;
+}
+/* paste */
+
+.game-picture{
+    background-color: black;
+    padding: 15px;
+    margin: 15px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+img {
+    width: 500px;
+    height: auto;
+}
+
+button.button{
+    display: block;
+    width: 200px;
+    height: auto;
+    max-width: 20em;
+    padding: 15px;
+    background-color: black;
+    text-align: center;
+    color: black;
+    background: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 5px solid black;
+    
+}
+
+button.button:hover {
+    background-color: rgb(235, 235, 102);
+  }
+
+.game-category, 
+.game-attempts,
+.game-status{
+    --color: rgb(235, 235, 102);
+    margin: 10px;
+    text-transform:uppercase;
+    font-size: 2rem;
+    font-family: sans-serif;
+    text-align:center;
+    color: var(--color);
+    vertical-align: middle;
+
+}
+
+.game-status{
+    color: rgb(220, 153, 153);
+}
