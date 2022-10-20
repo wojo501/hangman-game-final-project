@@ -1,6 +1,6 @@
 // import {Howl, Howler} from "howler";
-const howler = window.howler;
 
+ 
 const allAudio = [
     "/sources/sounds/background-driving_ambition.mp3",
     "/sources/sounds/letter.mp3",
@@ -8,8 +8,10 @@ const allAudio = [
 ];
 
 export class Audio{
+
     constructor(){
         this.backgroundSound = null;
+
         this.letterSound = new Howl({
             src : allAudio[1],
             loop : false,
@@ -40,12 +42,14 @@ export class Audio{
     };
 
     startButtonClick(){
-        console.dir(this.startButtonSound);
+        // console.dir(this.startButtonSound);
         this.startButtonSound.play();
     };
 
     letterClick(){
+        // console.dir(this.letterSound);
         this.letterSound.play();
     };
 }
+
 

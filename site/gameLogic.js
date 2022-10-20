@@ -1,7 +1,7 @@
 import {Category} from "./categoriesSentences.js";
 import {Audio} from "./audio.js";
 
-
+// const audio = new Audio();
 const game = {
     finalStatus : null,
     currentSentence : null,
@@ -52,11 +52,18 @@ const game = {
     },
 
     bindEvents(){
+        const lettersSoundHandler = () =>{
+            game.audio.letterClick();
+        };
+
         if(this.finalStatus == null){
             this.elemLetters.addEventListener("click", this.lettersChecker);
+            this.elemLetters.addEventListener("click", lettersSoundHandler);
             console.log("lettersChecker added")
+
         } else {
             this.elemLetters.removeEventListener("click", this.lettersChecker);
+            this.elemLetters.removeEventListener("click", lettersSoundHandler);
             console.log("lettersChecker removed")
         };
     },
@@ -165,7 +172,7 @@ const game = {
                 // GAME DEFEAT
                 this.finalStatus = "Game defeated!";
                 let letterIndex = 0;
-                [...this.elemSentence.children].forEach(child => {
+                [...this.elemSentence.children].forEach((child, index) => {
                     if (child.classList.contains("game-sentence-box")){
                         child.innerText = this.currentSentence[letterIndex];
                         letterIndex++;
@@ -230,9 +237,13 @@ const game = {
             game.audio.stopBackgroundSound();
         };
         
+        const audioHandler = () =>{
+            game.audio.startButtonClick();
+        };
 
         startButton.addEventListener("click", gameMode);
-        startButton.addEventListener("click", game.audio.startButtonClick);
+        console.log(game.audio);
+        startButton.addEventListener("click", audioHandler);
     }
 };
 
